@@ -115,14 +115,14 @@
 
   .custom-pin { background: none !important; border: none !important; }
   .pin-wrap {
-    width: 64px; height: 64px; border-radius: 50%; overflow: hidden;
-    border: 4px solid #fff; box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+    width: 96px; height: 96px; border-radius: 50%; overflow: hidden;
+    border: 5px solid #fff; box-shadow: 0 6px 20px rgba(0,0,0,0.5);
     background: #fff; position: relative;
   }
   .pin-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .pin-pulse {
-    position: absolute; top: -4px; left: -4px; right: -4px; bottom: -4px;
-    border-radius: 50%; border: 3px solid #60a5fa;
+    position: absolute; top: -5px; left: -5px; right: -5px; bottom: -5px;
+    border-radius: 50%; border: 4px solid #60a5fa;
     animation: pingPulse 2s infinite; pointer-events: none;
   }
   @keyframes pingPulse { 0%{transform:scale(1);opacity:0.9;} 100%{transform:scale(1.8);opacity:0;} }
@@ -520,7 +520,7 @@
 
   function updateMapMarker(lat, lng, imageUrl) {
     const html = '<div class="pin-wrap"><div class="pin-pulse"></div><img src="' + imageUrl + '" /></div>';
-    const icon = L.divIcon({ html, className: 'custom-pin', iconSize: [64, 64], iconAnchor: [32, 32] });
+    const icon = L.divIcon({ html, className: 'custom-pin', iconSize: [96, 96], iconAnchor: [48, 48] });
     if (!state.marker) {
       state.marker = L.marker([lat, lng], { icon }).addTo(state.map);
     } else {
